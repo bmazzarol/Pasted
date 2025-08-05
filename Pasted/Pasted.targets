@@ -1,0 +1,7 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <!-- Users can add their embedded files like this: -->
+    <!-- <EmbeddedFile Include="path/to/file.txt" /> -->
+    <AdditionalFiles Include="@(EmbeddedFile)" />
+  </ItemGroup>
+</Project>

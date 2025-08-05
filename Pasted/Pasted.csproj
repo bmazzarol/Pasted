@@ -16,6 +16,7 @@
   </PropertyGroup>
   <!-- This ensures the library will be packaged as a source generator when we use `dotnet pack` -->
   <ItemGroup>
+    <None Include="Pasted.targets" Pack="true" PackagePath="buildTransitive" />
     <None
       Include="$(OutputPath)\$(AssemblyName).dll"
       Pack="true"

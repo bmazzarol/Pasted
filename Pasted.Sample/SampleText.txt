@@ -1,0 +1,3 @@
+﻿Hello from the embedded file generator!
+This text is now available as a constant in your project.
+
