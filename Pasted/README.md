@@ -1,26 +1,10 @@
-<!-- markdownlint-disable MD033 MD041 -->
-<div align="center">
+<!-- markdownlint-disable MD013 -->
 
-<img src="glue-icon.png" alt="Pasted" width="150px"/>
+# ![Pasted](https://raw.githubusercontent.com/bmazzarol/Pasted/main/glue-small-icon.png) Pasted
 
-# Pasted
+<!-- markdownlint-enable MD013 -->
 
-[:running: **_Getting Started_**](https://bmazzarol.github.io/Pasted/getting-started.html)
-|
-[:books: **_Documentation_**](https://bmazzarol.github.io/Pasted)
-
-[![Nuget](https://img.shields.io/nuget/v/pasted)](https://www.nuget.org/packages/pasted/)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=bmazzarol_Pasted&metric=coverage)](https://sonarcloud.io/summary/new_code?id=bmazzarol_Pasted)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bmazzarol_Pasted&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=bmazzarol_Pasted)
-[![CD Build](https://github.com/bmazzarol/Pasted/actions/workflows/cd-build.yml/badge.svg)](https://github.com/bmazzarol/Pasted/actions/workflows/cd-build.yml)
-[![Check Markdown](https://github.com/bmazzarol/Pasted/actions/workflows/check-markdown.yml/badge.svg)](https://github.com/bmazzarol/Pasted/actions/workflows/check-markdown.yml)
-
-Compile time text file embedding for C#
-
-</div>
-<!-- markdownlint-enable MD033 MD041 -->
-
-## Why?
+[![Nuget](https://img.shields.io/nuget/v/Pasted)](https://www.nuget.org/packages/pasted/)
 
 Pasted is a simple .NET source generator that allows for compile time embedding
 of text files into your application. It is particularly useful for embedding
