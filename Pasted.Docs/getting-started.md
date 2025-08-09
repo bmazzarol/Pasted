@@ -50,10 +50,10 @@ The namespace and static property name can be configured in the
 ## Configuration Options
 
 <!-- markdownlint-disable MD013 -->
-| Option         | Type    | Default                                 | Description                                                                                         |
-|----------------|---------|-----------------------------------------|-----------------------------------------------------------------------------------------------------|
-| embed          | boolean | false                                   | Enables embedding this file into the generated class. Files with `embed = true` will be included.   |
-| namespace      | string  | Pasted                                  | Overrides the namespace used for the generated static class.                                        |
-| class_name     | string  | EmbeddedFiles                           | Overrides the name of the generated static class that contains file constants.                      |
-| field_name     | string  | Derived from file name (sans extension) | Overrides the constant field name for the file; by default uses the file name without extension.    |
-| public         | boolean | false                                   | Controls visibility of generated class and its fields; `true` makes them public, else internal.     |
+| Option     | Type    | Default                                 | Description                                                                                       |
+|------------|---------|-----------------------------------------|---------------------------------------------------------------------------------------------------|
+| embed      | boolean | false                                   | Enables embedding this file into the generated class. Files with `embed = true` will be included. |
+| namespace  | string  | Pasted                                  | Overrides the namespace used for the generated static class.                                      |
+| class_name | string  | EmbeddedFiles                           | Overrides the name of the generated static class that contains file constants.                    |
+| name       | string  | Derived from file name (sans extension) | Overrides the constant field name for the file; by default uses the file name without extension.  |
+| public     | boolean | false                                   | Controls visibility of generated class and its fields; `true` makes them public, else internal.   |
