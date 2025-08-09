@@ -21,7 +21,9 @@ public sealed class EmbeddedFilesSourceGenerator : IIncrementalGenerator
     {
         var embeddedFiles = context.AdditionalTextsProvider.Select((file, _) => file).Collect();
         var configProvider = context.AnalyzerConfigOptionsProvider.Select((options, _) => options);
-        var renderModelProvider = embeddedFiles.Combine(configProvider).Select(BuildRenderModel);
+        var renderModelProvider = embeddedFiles
+            .Combine(configProvider)
+            .SelectMany(BuildRenderModel);
 
         context.RegisterSourceOutput(renderModelProvider, GenerateEmbeddedFileSources);
     }
@@ -49,10 +51,6 @@ public sealed class EmbeddedFilesSourceGenerator : IIncrementalGenerator
 
             var sourceText = file.GetText(token);
             var content = sourceText?.ToString() ?? string.Empty;
-            if (options.IsEnabled(ConfigOptions.ReplaceQuotes))
-            {
-                content = content.Replace("\"\"", "\"\"\"");
-            }
 
             var visibility = options.IsEnabled(ConfigOptions.Public) ? "public" : "internal";
 
@@ -71,17 +69,10 @@ public sealed class EmbeddedFilesSourceGenerator : IIncrementalGenerator
         }
     }
 
-    private static void GenerateEmbeddedFileSources(
-        SourceProductionContext spc,
-        IEnumerable<RenderModel> renderModels
-    )
+    private static void GenerateEmbeddedFileSources(SourceProductionContext spc, RenderModel model)
     {
         var sb = new StringBuilder();
-        foreach (var m in renderModels)
-        {
-            sb.Clear();
-            sb.WriteTemplate(m);
-            spc.AddSource($"{m.Namespace}.{m.ClassName}.{m.FieldName}.g.cs", sb.ToString());
-        }
+        sb.WriteTemplate(model);
+        spc.AddSource($"{model.Namespace}.{model.ClassName}.{model.FieldName}.g.cs", sb.ToString());
     }
 }

@@ -36,11 +36,7 @@
     <PackageReference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference
-      Include="Cutout"
-      Version="0.0.0-beta.1"
-      Condition="$(BuiltInMonoRepo) != 'true'"
-    >
+    <PackageReference Include="Cutout" Condition="$(BuiltInMonoRepo) != 'true'">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
