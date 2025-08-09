@@ -50,7 +50,7 @@ public sealed class EmbeddedFilesSourceGenerator : IIncrementalGenerator
                 : Path.GetFileNameWithoutExtension(file.Path).Replace('-', '_').Replace('.', '_');
 
             var sourceText = file.GetText(token);
-            var content = sourceText?.ToString() ?? string.Empty;
+            var content = sourceText?.ToString().Replace("\"", "\"\"") ?? string.Empty;
 
             var visibility = options.IsEnabled(ConfigOptions.Public) ? "public" : "internal";
 
