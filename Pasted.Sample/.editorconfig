@@ -1,0 +1,9 @@
+[SampleText.txt]
+embed = true
+
+[SampleText2.md]
+embed = true
+namespace = Test
+class_name = Files
+name = ExampleMdFile1
+public = true
