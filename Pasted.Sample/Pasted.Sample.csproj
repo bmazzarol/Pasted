@@ -10,8 +10,8 @@
       ReferenceOutputAssembly="false"
     />
   </ItemGroup>
-  <Import Project="..\Pasted\Pasted.targets" />
   <ItemGroup>
     <AdditionalFiles Include="SampleText.txt" />
+    <AdditionalFiles Include="SampleText2.md" />
   </ItemGroup>
 </Project>

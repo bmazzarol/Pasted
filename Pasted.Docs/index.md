@@ -26,6 +26,3 @@ of text files into your application. It is particularly useful for embedding
 resources such as HTML, CSS, JavaScript, or any other text-based files directly
 into your code. It works well for source generators and applications
 that are compiled ahead of time (AOT).
-
-It comes with a MSBuild task that is used to select the files to embed, the
-source generator then generates a static class with constants for each file.
