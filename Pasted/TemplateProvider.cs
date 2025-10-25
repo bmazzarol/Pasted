@@ -1,28 +1,45 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
-using Cutout;
 
 namespace Pasted;
 
 [ExcludeFromCodeCoverage]
-internal static partial class TemplateProvider
+internal static class TemplateProvider
 {
-    private const string Template = """
-        namespace {{model.Namespace}};
+    internal static void WriteTemplate(this StringBuilder builder, RenderModel model)
+    {
+        builder.Append("namespace ");
+        builder.Append(model.Namespace);
+        builder.Append(
+            @";
 
-        /// <summary>
-        /// Compiled embedded files
-        /// </summary>
-        {{model.Visibility}} static partial class {{model.ClassName}}
-        {
-            /// <summary>
-            /// {{model.Path}} embedded file
-            /// </summary>
-            public const string {{model.FieldName}} = @""{{model.Content}}"";
-        }
-
-        """;
-
-    [Template(Template)]
-    internal static partial void WriteTemplate(this StringBuilder builder, RenderModel model);
+/// <summary>
+/// Compiled embedded files
+/// </summary>
+"
+        );
+        builder.Append(model.Visibility);
+        builder.Append(" static partial class ");
+        builder.Append(model.ClassName);
+        builder.Append(
+            @"
+{
+    /// <summary>
+    /// "
+        );
+        builder.Append(model.Path);
+        builder.Append(
+            @" embedded file
+    /// </summary>
+    public const string "
+        );
+        builder.Append(model.FieldName);
+        builder.Append(@" = @""");
+        builder.Append(model.Content);
+        builder.Append(
+            @""";
+}
+"
+        );
+    }
 }
