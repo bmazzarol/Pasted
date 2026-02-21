@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Pasted.Docs/Pasted.Docs.csproj" />
+  <Project Path="Pasted.Sample/Pasted.Sample.csproj" />
+  <Project Path="Pasted.Tests/Pasted.Tests.csproj" />
+  <Project Path="Pasted/Pasted.csproj" />
+</Solution>

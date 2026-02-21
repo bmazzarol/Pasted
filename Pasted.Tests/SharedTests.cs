@@ -12,12 +12,10 @@ public class SharedTests
     [Fact(DisplayName = "Text files can be embedded in a project")]
     public async Task Case1()
     {
-        var driver = BuildDriver(
-            [
-                new TestAdditionalFile("test.txt", SourceText.From("test")),
-                new TestAdditionalFile("test.ignored", SourceText.From("test")),
-            ]
-        );
+        var driver = BuildDriver([
+            new TestAdditionalFile("test.txt", SourceText.From("test")),
+            new TestAdditionalFile("test.ignored", SourceText.From("test")),
+        ]);
 
         await Verify(driver);
     }
