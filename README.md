@@ -12,10 +12,9 @@ A source generator that turns text files into string constants at compile time, 
 
 ## Why?
 
-Pasted is a simple .NET source generator that allows for compile time embedding
-of text files into your application. It is particularly useful for embedding
-resources such as HTML, CSS, JavaScript, or any other text-based files directly
-into your code. It works well for source generators and applications
+Pasted is a .NET source generator that embeds the contents of a text file
+into C# source at compile time. It is useful for resources such as HTML, CSS
+and JavaScript that would otherwise be read from disk at runtime. It works well for source generators and applications
 that are compiled ahead of time (AOT).
 
 ## How to use
