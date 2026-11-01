@@ -4,7 +4,7 @@
 
 **Text files, baked into the binary.**
 
-A source generator that embeds the contents of text files into C# at compile time, for source generators and AOT apps where there is no filesystem at runtime.
+A source generator that turns text files into string constants at compile time, for source generators and AOT apps where there is no filesystem at runtime.
 
 [![Nuget](https://img.shields.io/nuget/v/Pasted)](https://www.nuget.org/packages/Pasted/) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=bmazzarol_Pasted&metric=coverage)](https://sonarcloud.io/summary/new_code?id=bmazzarol_Pasted) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bmazzarol_Pasted&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=bmazzarol_Pasted) [![CD Build](https://github.com/bmazzarol/Pasted/actions/workflows/cd-build.yml/badge.svg)](https://github.com/bmazzarol/Pasted/actions/workflows/cd-build.yml) [![Check Markdown](https://github.com/bmazzarol/Pasted/actions/workflows/check-markdown.yml/badge.svg)](https://github.com/bmazzarol/Pasted/actions/workflows/check-markdown.yml)
 
@@ -69,7 +69,6 @@ The namespace, class name, and constant field names can be configured in the
 
 ## Configuration Options
 
-<!-- markdownlint-disable MD013 -->
 | Option     | Type    | Default                                 | Description                                                                                       |
 |------------|---------|-----------------------------------------|---------------------------------------------------------------------------------------------------|
 | embed      | boolean | false                                   | Enables embedding this file into the generated class. Files with `embed = true` will be included. |
