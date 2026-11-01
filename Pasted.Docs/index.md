@@ -4,7 +4,7 @@
 
 **Text files, baked into the binary.**
 
-A source generator that turns text files into string constants at compile time, for source generators and AOT apps where there is no filesystem at runtime.
+A source generator that turns text files into string constants at compile time, for source generators and AOT binaries that have no assembly directory to read from at runtime.
 
 ```shell
 dotnet add package Pasted
